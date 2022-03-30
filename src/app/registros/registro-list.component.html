@@ -1,0 +1,72 @@
+<div id="consulta">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col">
+        <h1 class="display-4">Consulta de Pontos</h1>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-2">
+        <select class="form-control" id="ano">
+          <option value="">Ano</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <form>
+          <select class="form-control" id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <select class="form-control" id="entrada">
+          <option value="">Tipo</option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saida</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+
+          <tbody id="listaPontos">
+            <tr *ngFor="let registro of filteredRegistros">
+              <td>{{ registro.dia }}/{{ registro.mes }} </td>
+              <td>{{ registro.hora }}:{{ registro.minuto }}</td>
+              <td>{{ registro.tipo }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
